@@ -57,8 +57,10 @@ export default function MainBody() {
 
 const SvgTag = styled.svg`
   display: block;
+
   height: 12px;
   width: 12px;
+
   fill: currentcolor;
 `;
 
@@ -67,13 +69,13 @@ const MainBodyDiv = styled.div`
   flex-wrap: wrap;
 
   padding: 0 80px;
-
   max-width: 100%;
 `;
 
 const MainImgBox = styled.img`
   width: 310px;
   height: 295px;
+
   border-radius: 10px;
   margin-bottom: 15px;
 `;

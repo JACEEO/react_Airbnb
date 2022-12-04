@@ -35,7 +35,9 @@ const BannerTop = styled.div`
   padding: 0 80px;
 
   width: 100%;
-  max-width: 1420px;
+  max-width: 1310px;
+
+  background-color: #f7f7f7;
 
   border-bottom: 1px solid #dddddd;
 

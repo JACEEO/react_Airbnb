@@ -20,17 +20,13 @@
 }
 
 .banner_right {
-  right: 64px;
-
   padding-top: 23px;
   padding-bottom: 21px;
 
-  position: relative;
   display: flex;
   align-items: center;
 
   height: 100%;
-  top: 0;
 }
 
 .banner_button {
@@ -335,9 +331,6 @@ footer {
 
   justify-content: space-between;
   align-items: center;
-}
-
-.footer_wrap {
 }
 
 .footer_mid {
