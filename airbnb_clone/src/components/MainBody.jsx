@@ -69,7 +69,9 @@ const MainBodyDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  padding: 0 80px;
+  gap: 40px 24px;
+
+  padding: 0 60px 100px 80px;
   max-width: 100%;
 `;
 
@@ -79,4 +81,11 @@ const MainImgBox = styled.img`
 
   border-radius: 10px;
   margin-bottom: 15px;
+`;
+
+const HeartBtn = styled.button`
+  position: relative;
+  top: 0;
+  left: 10px;
+  z-index: 1;
 `;

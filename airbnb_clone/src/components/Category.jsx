@@ -35,5 +35,26 @@ export default function Category() {
 }
 
 const CategoryBox = styled.div`
-  border-bottom: 1px solid;
+  padding: 18px 0;
+
+  width: 100%;
+  height: 98px;
+  max-width: 1200px;
+
+  position: unset;
+  height: 100%;
+  background-color: #ffffff;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  grid-column-gap: 32px;
+
+  padding-left: 80px;
+
+  overflow: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
