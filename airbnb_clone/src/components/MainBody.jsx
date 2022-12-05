@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import dummy from "../hook/data.json";
 
@@ -7,7 +8,7 @@ export default function MainBody() {
     <MainBodyDiv>
       {dummy.source.map((e) => {
         return (
-          <a target="_blank" href="./detail.html">
+          <Link to="/detail" target="_blank">
             <div>
               <div>
                 <MainImgBox alt={e.src} src={e.src} />
@@ -48,7 +49,7 @@ export default function MainBody() {
                 </span>
               </div>
             </div>
-          </a>
+          </Link>
         );
       })}
     </MainBodyDiv>

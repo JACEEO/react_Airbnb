@@ -1,20 +1,16 @@
-import Banner from "./components/Banner";
-import Category from "./components/Category";
-import Footer from "./components/Footer";
-import MainBody from "./components/MainBody";
-import Nav from "./components/Nav";
+import { Route, Routes } from "react-router-dom";
+import Detail from "./components/Detail";
+import Home from "./components/Home";
+
 import "./css/global.css";
 import "./css/main.css";
 
 function App() {
   return (
-    <div>
-      <Banner />
-      <Nav />
-      <Category />
-      <MainBody />
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/detail" element={<Detail />} />
+    </Routes>
   );
 }
 
