@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import main from "../hook/data.json";
+import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from "react-icons/md";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 

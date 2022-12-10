@@ -2,6 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import dummy from "../hook/data.json";
+import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from "react-icons/md";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Navigation, Pagination, Mousewheel } from "swiper";
 
 export default function MainBody() {
   return (
@@ -10,9 +21,36 @@ export default function MainBody() {
         return (
           <Link to={`/detail/${e.id}`} target="_blank">
             <div>
-              <div>
-                <MainImgBox alt={e.src} src={e.src} />
-              </div>
+              <Swiper
+                navigation={true}
+                pagination={true}
+                mousewheel={true}
+                modules={[Pagination, Navigation, Mousewheel]}
+                className="mySwiper"
+                style={{ width: "310px" }}
+              >
+                <SwiperSlide style={{ padding: "0", height: "295px" }}>
+                  <MdOutlineNavigateBefore className="swiper-button-prev" />
+                  <MainImgBox alt={e.src} src={e.src} />
+                  <MdOutlineNavigateNext className="swiper-button-next" />
+                </SwiperSlide>
+                <SwiperSlide style={{ padding: "0", height: "295px" }}>
+                  <MdOutlineNavigateBefore className="swiper-button-prev" />
+                  <MainImgBox alt={e.src} src={e.src} />
+                  <MdOutlineNavigateNext className="swiper-button-next" />
+                </SwiperSlide>
+                <SwiperSlide style={{ padding: "0", height: "295px" }}>
+                  <MdOutlineNavigateBefore className="swiper-button-prev" />
+                  <MainImgBox alt={e.src} src={e.src} />
+                  <MdOutlineNavigateNext className="swiper-button-next" />
+                </SwiperSlide>
+                <SwiperSlide style={{ padding: "0", height: "295px" }}>
+                  <MdOutlineNavigateBefore className="swiper-button-prev" />
+                  <MainImgBox alt={e.src} src={e.src} />
+                  <MdOutlineNavigateNext className="swiper-button-next" />
+                </SwiperSlide>
+              </Swiper>
+
               <div class="main-info">
                 <div class="main-detail">{e.region}</div>
                 <div class="main-detail">
@@ -76,9 +114,8 @@ const MainBodyDiv = styled.div`
 `;
 
 const MainImgBox = styled.img`
-  width: 310px;
-  height: 295px;
+  width: 100%;
+  height: 100%;
 
   border-radius: 10px;
-  margin-bottom: 15px;
 `;
