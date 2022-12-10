@@ -8,7 +8,7 @@ export default function MainBody() {
     <MainBodyDiv>
       {dummy.source.map((e) => {
         return (
-          <Link to="/detail" target="_blank">
+          <Link to={`/detail/${e.id}`} target="_blank">
             <div>
               <div>
                 <MainImgBox alt={e.src} src={e.src} />
@@ -81,11 +81,4 @@ const MainImgBox = styled.img`
 
   border-radius: 10px;
   margin-bottom: 15px;
-`;
-
-const HeartBtn = styled.button`
-  position: relative;
-  top: 0;
-  left: 10px;
-  z-index: 1;
 `;

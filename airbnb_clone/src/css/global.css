@@ -141,3 +141,20 @@ button {
   border: 0;
   padding: 0;
 }
+
+/* swiper */
+.swiper {
+  width: 1200px;
+  height: 100%;
+}
+
+.swiper-slide {
+  font-size: 18px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px 10px 0 10px;
+}

@@ -215,48 +215,10 @@
 
 /* 카테고리 부분 */
 
-.category-div {
-  padding: 18px 0;
-
-  position: sticky;
-
-  top: 20px;
-
-  height: 98px;
-}
-
-.category {
-  position: unset;
-  height: 100%;
-  background-color: #ffffff;
-
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: max-content;
-  grid-column-gap: 32px;
-
-  padding-left: 80px;
-
-  overflow: scroll;
-}
-
-.category::-webkit-scrollbar {
-  display: none;
-}
-
-.category-btn {
-  background-color: #ffffff;
-  cursor: pointer;
-}
-
 .category-span {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.category-img {
-  padding-bottom: 8px;
 }
 
 .category-font {
