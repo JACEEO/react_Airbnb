@@ -5,18 +5,18 @@ export default function DetailBody() {
   return (
     <>
       <section>
-        <div class="main-section-padding">
-          <div class="main-section-margin">
-            <div class="main-section-padding-top">
+        <div className="main-section-padding">
+          <div className="main-section-margin">
+            <div className="main-section-padding-top">
               <span>
-                <h1 class="main-h1">
+                <h1 className="main-h1">
                   10-Acre Retreat-10 Beds-Hot Tub-Pool Table-Pets
                 </h1>
               </span>
-              <div class="main-between">
-                <div class="main-host">
-                  <span class="main-star">
-                    <span class="">
+              <div className="main-between">
+                <div className="main-host">
+                  <span className="main-star">
+                    <span>
                       <StarSvg
                         viewBox="0 0 32 32"
                         xmlns="http://www.w3.org/2000/svg"
@@ -30,21 +30,21 @@ export default function DetailBody() {
                         ></path>
                       </StarSvg>
                     </span>
-                    <span class="">5.0 · </span>
-                    <span class=""> 후기 7개 · </span>
+                    <span className="">5.0 · </span>
+                    <span className=""> 후기 7개 · </span>
                   </span>
 
-                  <span class="main-star">
+                  <span className="main-star">
                     <span> 슈퍼호스트 · </span>
                   </span>
 
-                  <span class="main-star">
+                  <span className="main-star">
                     <span> Fairplay, 콜로라도, 미국 </span>
                   </span>
                 </div>
-                <div class="main-save">
-                  <div class="main-star">
-                    <span class="_14tkmhr">
+                <div className="main-save">
+                  <div className="main-star">
+                    <span className="_14tkmhr">
                       <HeartSvg
                         viewBox="0 0 32 32"
                         xmlns="http://www.w3.org/2000/svg"
@@ -62,8 +62,8 @@ export default function DetailBody() {
                     공유하기
                   </div>
 
-                  <div class="main-star">
-                    <span class="_14tkmhr">
+                  <div className="main-star">
+                    <span className="_14tkmhr">
                       <HeartSvg
                         viewBox="0 0 32 32"
                         xmlns="http://www.w3.org/2000/svg"

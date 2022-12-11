@@ -3,53 +3,38 @@ import React from "react";
 export default function Footer() {
   return (
     <footer>
-      <div class="footer_wrap">
-        <div class="footer_box">
-          <div class="footer_map">
-            <span class="">© 2022 Airbnb, Inc.</span>
-            <span class="" aria-hidden="true">
+      <div className="footer_wrap">
+        <div className="footer_box">
+          <div className="footer_map">
+            <span className="">© 2022 Airbnb, Inc.</span>
+            <span className="" aria-hidden="true">
               ·
             </span>
-            <a href="/terms/privacy_policy" class="">
-              개인정보 처리방침
-            </a>
-            <span class="" aria-hidden="true">
-              ·
-            </span>
-            <a href="/terms" class="">
-              이용약관
-            </a>
-            <span class="" aria-hidden="true">
-              ·
-            </span>
-            <a href="/sitemaps/v2" class="">
-              사이트맵
-            </a>
-            <span class="" aria-hidden="true">
-              ·
-            </span>
+            <a href="/terms/privacy_policy">개인정보 처리방침</a>
+            <span aria-hidden="true">·</span>
+            <a href="/terms">이용약관</a>
+            <span aria-hidden="true">·</span>
+            <a href="/sitemaps/v2">사이트맵</a>
+            <span aria-hidden="true">·</span>
             <a
               target="_blank"
               href="/home/updated_cancellation_policies?korean_strict_policy=true#strict"
-              class=""
             >
               한국의 변경된 환불 정책
             </a>
-            <span class="" aria-hidden="true">
-              ·
-            </span>
-            <a target="_blank" href="/about/company-details" class="">
+            <span aria-hidden="true">·</span>
+            <a target="_blank" href="/about/company-details">
               회사 세부정보
             </a>
           </div>
 
-          <div class="footer_mid"></div>
+          <div className="footer_mid"></div>
 
           <div></div>
         </div>
 
-        <div class="footer_info">
-          <div class="footer_info_detail">
+        <div className="footer_info">
+          <div className="footer_info_detail">
             웹사이트 제공자: Airbnb Ireland UC, private unlimited company, 8
             Hanover Quay Dublin 2, D02 DP23 Ireland | 이사: Dermot Clarke,
             Killian Pattwell, Andrea Finnegan | VAT 번호: IE9827384L | 사업자

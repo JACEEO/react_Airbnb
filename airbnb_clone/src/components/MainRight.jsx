@@ -4,13 +4,13 @@ import styled from "styled-components";
 export default function MainRight() {
   return (
     <>
-      <div class="detail-side">
-        <div class="sticky">
-          <div class="side-bar">
-            <div class="side-blk">
-              <div class="side-mny">
+      <div className="detail-side">
+        <div className="sticky">
+          <div className="side-bar">
+            <div className="side-blk">
+              <div className="side-mny">
                 <div>
-                  <span class="side-mny-span">₩1,442,856</span>
+                  <span className="side-mny-span">₩1,442,856</span>
                   <span>/ 박</span>
                 </div>
 
@@ -34,23 +34,23 @@ export default function MainRight() {
                 </div>
               </div>
 
-              <div class="side-btn-div">
-                <div class="side-chk-box">
-                  <div class="side-chkin">
+              <div className="side-btn-div">
+                <div className="side-chk-box">
+                  <div className="side-chkin">
                     <div>체크인</div>
                     <div>2022. 12. 06.</div>
                   </div>
-                  <div class="side-chkout">
+                  <div className="side-chkout">
                     <div>체크아웃</div>
                     <div>2022. 12. 11.</div>
                   </div>
                 </div>
-                <div class="side-guest">
+                <div className="side-guest">
                   <div>
                     <div>인원</div>
                     <div>게스트 1명</div>
                   </div>
-                  <div class="side-guest-cnt">
+                  <div className="side-guest-cnt">
                     <SideGuestCnt
                       viewBox="0 0 32 32"
                       xmlns="http://www.w3.org/2000/svg"
@@ -66,43 +66,43 @@ export default function MainRight() {
                 </div>
               </div>
               <a href="/reservation.html">
-                <div class="side-res">
-                  <button class="side-res-btn">예약하기</button>
+                <div className="side-res">
+                  <button className="side-res-btn">예약하기</button>
                 </div>
               </a>
 
-              <div class="res-info">
+              <div className="res-info">
                 예약 확정 전에는 요금이 청구되지 않습니다.
               </div>
-              <div class="side-cal-div">
-                <div class="side-cal">
+              <div className="side-cal-div">
+                <div className="side-cal">
                   <div>₩1,442,856 x 5박</div>
                   <div>₩7,214,280</div>
                 </div>
-                <div class="side-cal">
+                <div className="side-cal">
                   <div>청소비</div>
                   <div>₩600,000</div>
                 </div>
-                <div class="side-cal">
+                <div className="side-cal">
                   <div>서비스 수수료</div>
                   <div>₩400,000</div>
                 </div>
-                <div class="side-cal">
+                <div className="side-cal">
                   <div>세금</div>
                   <div>₩300,000</div>
                 </div>
               </div>
-              <div class="side-allcal">
-                <div class="side-cal">
+              <div className="side-allcal">
+                <div className="side-cal">
                   <div>총 합계</div>
                   <div>₩8,514,280</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="side-info">
-            <div class="side-info-div">
-              <h2 class="side-info-h2">저렴한 요금</h2>
+          <div className="side-info">
+            <div className="side-info-div">
+              <h2 className="side-info-h2">저렴한 요금</h2>
               <span>
                 검색하시는 날짜의 요금은 지난 3개월의 평균 1박 요금보다 ₩283,513
                 저렴합니다.
@@ -126,9 +126,9 @@ export default function MainRight() {
               </MoneySvg>
             </div>
           </div>
-          <div class="report">
+          <div className="report">
             <div>
-              <button class="report-btn">
+              <button className="report-btn">
                 <span>
                   <ReportSvg
                     viewBox="0 0 32 32"
@@ -140,7 +140,7 @@ export default function MainRight() {
                     <path d="M28 6H17V4a2 2 0 0 0-2-2H3v28h2V18h10v2a2 2 0 0 0 2 2h11l.115-.006a1 1 0 0 0 .847-1.269L27.039 14l1.923-6.724A1 1 0 0 0 28 6z"></path>
                   </ReportSvg>
                 </span>
-                <span class="report-con"> 숙소 신고하기 </span>
+                <span className="report-con"> 숙소 신고하기 </span>
               </button>
             </div>
           </div>

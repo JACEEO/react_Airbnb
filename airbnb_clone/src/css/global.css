@@ -159,18 +159,10 @@ button {
 
   padding: 10px 10px 0 10px;
 }
-
 .swiper-button-next {
-  background-size: 50% auto;
-  background-position: center;
   color: #222222;
 }
 
 .swiper-button-prev {
   color: #222222;
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  display: none;
 }

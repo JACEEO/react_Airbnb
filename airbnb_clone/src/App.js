@@ -2,6 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import Detail from "./pages/Detail";
 import Home from "./pages/Home";
 
+import { dummy } from "./hook/airDummy";
+
 import "./css/global.css";
 import "./css/main.css";
 import "./css/detail.css";

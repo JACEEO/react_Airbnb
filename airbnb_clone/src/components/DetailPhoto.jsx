@@ -3,10 +3,10 @@ import React from "react";
 export default function DetailPhoto() {
   return (
     <>
-      <div class="main-picture">
-        <div class="grid1">
+      <div className="main-picture">
+        <div className="grid1">
           <img
-            class="main-img"
+            className="main-img"
             aria-hidden="true"
             alt=""
             elementtiming="LCP-target"
@@ -16,9 +16,9 @@ export default function DetailPhoto() {
             data-original-uri="https://a0.muscache.com/pictures/miso/Hosting-749996089802009824/original/8fefceb0-da83-461c-9441-1dc5ce1c0174.jpeg"
           />
         </div>
-        <div class="grid2">
+        <div className="grid2">
           <img
-            class="main-img"
+            className="main-img"
             aria-hidden="true"
             alt=""
             elementtiming="LCP-target"
@@ -26,9 +26,9 @@ export default function DetailPhoto() {
             data-original-uri="https://a0.muscache.com/pictures/miso/Hosting-749996089802009824/original/e17c9704-68e8-478b-90ce-86e822ef921b.jpeg"
           />
         </div>
-        <div class="grid3">
+        <div className="grid3">
           <img
-            class="main-img"
+            className="main-img"
             aria-hidden="true"
             alt=""
             elementtiming="LCP-target"
@@ -36,9 +36,9 @@ export default function DetailPhoto() {
             data-original-uri="https://a0.muscache.com/pictures/miso/Hosting-749996089802009824/original/375f3bdf-59b7-49c2-a9b5-c486465a08c7.jpeg"
           />
         </div>
-        <div class="grid4">
+        <div className="grid4">
           <img
-            class="main-img"
+            className="main-img"
             aria-hidden="true"
             alt=""
             elementtiming="LCP-target"
@@ -46,9 +46,9 @@ export default function DetailPhoto() {
             data-original-uri="https://a0.muscache.com/pictures/miso/Hosting-749996089802009824/original/48e1dd35-a977-46f1-a426-31ee9be52e6f.jpeg"
           />
         </div>
-        <div class="grid5">
+        <div className="grid5">
           <img
-            class="main-img"
+            className="main-img"
             aria-hidden="true"
             alt=""
             elementtiming="LCP-target"
