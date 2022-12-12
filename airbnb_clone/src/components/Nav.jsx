@@ -1,10 +1,28 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
+import styled from "styled-components";
 
 export default function Nav() {
+  const [on, setOn] = useState(false);
+
+  const [search, setSearch] = useState(``);
+
+  const SearchBtn = () => {
+    setOn(!on);
+  };
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+
+    console.log(search);
+  };
+
+  useEffect(() => {});
   return (
-    <div className="nav_bar">
-      <div className="nav_logo_box">
-        <a href="/" className="nav_a">
+    <NavBar value={on}>
+      <div style={{ width: "460px" }}>
+        <NavLink>
           <div>
             <svg style={{ display: "block", width: "102", height: "32" }}>
               <path
@@ -17,11 +35,11 @@ export default function Nav() {
               ></path>
             </svg>
           </div>
-        </a>
+        </NavLink>
       </div>
 
-      <div className="nav_wrap">
-        <div className="nav_search">
+      <SearchWrap>
+        <NavSearch value={on} onClick={SearchBtn}>
           <button className="nav_search_btn">
             <div className="nav_search_div">어디든지</div>
           </button>
@@ -55,8 +73,40 @@ export default function Nav() {
               </svg>
             </div>
           </button>
-        </div>
-      </div>
+        </NavSearch>
+        <SearchBox value={on}>
+          <SearchInput
+            type="text"
+            placeholder="여행지 검색"
+            value={search}
+            onChange={handleSearch}
+          />
+          <SearchBoxBtn onClick={SearchBtn}>
+            <div className="search_icon">
+              <svg
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                role="presentation"
+                focusable="false"
+                style={{
+                  display: "block",
+                  fill: "none",
+                  height: "12px",
+                  width: "12px",
+                  stroke: "currentcolor",
+
+                  overflow: "visible",
+                }}
+              >
+                <g fill="none">
+                  <path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"></path>
+                </g>
+              </svg>
+            </div>
+          </SearchBoxBtn>
+        </SearchBox>
+      </SearchWrap>
 
       <div className="profile">
         <a href="/" className="profile_a">
@@ -117,6 +167,97 @@ export default function Nav() {
           </svg>
         </div>
       </div>
-    </div>
+    </NavBar>
   );
 }
+
+const NavBar = styled.div`
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+
+  max-width: 1470px;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background-color: #ffffff;
+  height: 100%;
+
+  padding: 0 80px;
+  border-bottom: 1px solid #dddddd;
+
+  transform: translateY(${(props) => (props.value ? "30x" : "80px")});
+  transition: transform 250ms ease;
+`;
+
+const NavLink = styled.a`
+  cursor: pointer;
+  color: #ff385c;
+`;
+
+const SearchWrap = styled.div`
+  padding: 0 24px;
+  flex: 0 1 auto;
+  width: 460px;
+`;
+
+const NavSearch = styled.div`
+  max-width: 1120px;
+
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 40px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
+
+  align-items: center;
+  display: inline-flex;
+
+  visibility: ${(props) => (props.value ? "visible" : "hidden")};
+
+  padding: 0 10px;
+`;
+
+const SearchBox = styled.div`
+  position: absolute;
+  top: 0;
+  visibility: ${(props) => (props.value ? "hidden" : "visible")};
+
+  border: 1px solid #dddddd;
+  border-radius: 40px;
+
+  width: 370px;
+  height: 60px;
+
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const SearchInput = styled.input`
+  border: none;
+  height: 30px;
+  width: 300px;
+  position: absolute;
+  top: 13px;
+  left: 22px;
+
+  font-size: large;
+  color: gray;
+
+  z-index: 100;
+
+  :focus {
+    outline: none;
+  }
+`;
+
+const SearchBoxBtn = styled.button`
+  background-color: #ffffff;
+  cursor: pointer;
+
+  border-radius: 40px;
+
+  margin-right: 10px;
+`;

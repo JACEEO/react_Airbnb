@@ -1,64 +1,5 @@
 /* 상단 nav 부분 */
 
-.nav_bar {
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  max-width: 1470px;
-
-  position: sticky;
-  top: 0;
-  z-index: 1;
-
-  background-color: #ffffff;
-  height: 80px;
-
-  padding: 0 80px;
-  border-bottom: 1px solid #dddddd;
-}
-.nav_logo_box {
-  display: block;
-  width: 460px;
-}
-
-.nav_a {
-  cursor: pointer;
-  color: #ff385c;
-
-  outline: none;
-  align-items: center;
-  display: inline-flex;
-  height: 80px;
-  position: relative;
-  vertical-align: middle;
-  z-index: 1;
-}
-
-.nav_wrap {
-  padding: 0 24px;
-  flex: 0 1 auto;
-  width: 460px;
-}
-
-.nav_search {
-  max-width: 1120px;
-
-  text-align: left;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 40px;
-  box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
-  transition: box-shadow 0.2s ease;
-
-  height: 48px;
-
-  align-items: center;
-  color: #222222;
-  display: inline-flex;
-  max-width: 100%;
-  vertical-align: middle;
-}
-
 .nav_search_btn {
   height: 48px;
   padding-left: 8px;
@@ -115,6 +56,8 @@
 
 .profile {
   width: 320px;
+  height: 80px;
+
   display: flex;
   justify-content: space-between;
 
