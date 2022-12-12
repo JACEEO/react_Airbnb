@@ -28,18 +28,18 @@ export default function Category() {
     console.log(id);
   };
 
-  useEffect(() => {
-    alert(`first render`);
-    if (!id) {
-      return () => {
-        alert(false);
-      };
-    }
+  // useEffect(() => {
+  //   alert(`first render`);
+  //   if (!id) {
+  //     return () => {
+  //       alert(false);
+  //     };
+  //   }
 
-    return () => {
-      alert(`change render`);
-    };
-  }, [id]);
+  //   return () => {
+  //     alert(`change render`);
+  //   };
+  // }, [id]);
   return (
     <CategoryWrap>
       <CategoryBox>

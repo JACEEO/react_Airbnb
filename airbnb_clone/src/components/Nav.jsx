@@ -1,12 +1,16 @@
 import React from "react";
-import { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-export default function Nav() {
-  const [on, setOn] = useState(false);
+import dummy from "../hook/data.json";
 
-  const [search, setSearch] = useState(``);
+export default function Nav() {
+  const [on, setOn] = useState(true);
+
+  const [search, setSearch] = useState("");
+
+  const navigate = useNavigate();
 
   const SearchBtn = () => {
     setOn(!on);
@@ -14,15 +18,23 @@ export default function Nav() {
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
-
-    console.log(search);
   };
 
-  useEffect(() => {});
+  const resetSearch = (e) => {
+    setSearch(``);
+  };
+
+  const fiterRegion = dummy.source.filter((f) => {
+    return f.region
+      .replace(" ", "")
+      .toLocaleLowerCase()
+      .includes(search.toLocaleLowerCase());
+  });
+
   return (
     <NavBar value={on}>
       <div style={{ width: "460px" }}>
-        <NavLink>
+        <NavLink href="/">
           <div>
             <svg style={{ display: "block", width: "102", height: "32" }}>
               <path
@@ -106,6 +118,24 @@ export default function Nav() {
             </div>
           </SearchBoxBtn>
         </SearchBox>
+        <SearchUl value={on}>
+          {fiterRegion.map((e) => {
+            if (search !== "") {
+              return (
+                <SearchLi
+                  key={e.id}
+                  onClick={() => {
+                    navigate(`/detail/${e.id}`, { state: { e } });
+                    resetSearch();
+                  }}
+                >
+                  {e.region}
+                </SearchLi>
+              );
+            }
+            return;
+          })}
+        </SearchUl>
       </SearchWrap>
 
       <div className="profile">
@@ -260,4 +290,30 @@ const SearchBoxBtn = styled.button`
   border-radius: 40px;
 
   margin-right: 10px;
+`;
+
+const SearchUl = styled.ul`
+  visibility: ${(props) => (props.value ? "hidden" : "visible")};
+
+  margin-top: ${(props) => (props.value ? "0" : "20px")};
+  width: 370px;
+
+  z-index: 1000;
+
+  height: ${(props) => (props.value ? "0" : "10px")};
+`;
+
+const SearchLi = styled.li`
+  height: 30px;
+
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+
+  background-color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
 `;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import dummy from "../hook/data.json";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -18,13 +18,20 @@ import { useState } from "react";
 export default function MainBody() {
   const [select, setSelect] = useState([]);
 
+  const navigate = useNavigate();
+
   console.log(select);
   return (
     <MainBodyDiv>
       {dummy.source.map((e, index) => {
         return (
           <ImageWrap key={index}>
-            <Link to={`/detail/${e.id}`} target="_blank" id={e.id} src={e.src}>
+            <div
+              onClick={() => {
+                navigate(`/detail/${e.id}`, { state: { e } });
+              }}
+              style={{ cursor: "pointer" }}
+            >
               <Swiper
                 navigation={true}
                 pagination={true}
@@ -73,7 +80,7 @@ export default function MainBody() {
                   <span>5.0</span>
                 </span>
               </div>
-            </Link>
+            </div>
 
             <Heart>
               <HeartBtn
@@ -128,6 +135,8 @@ const MainImgBox = styled.img`
 const ImageWrap = styled.div`
   position: relative;
   height: 100%;
+
+  cursor: pointer;
 `;
 
 const Heart = styled.div`
