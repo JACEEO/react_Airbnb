@@ -13,9 +13,7 @@ export default function DetailBody() {
           <div className="main-section-margin">
             <div className="main-section-padding-top">
               <span>
-                <h1 className="main-h1">
-                  10-Acre Retreat-10 Beds-Hot Tub-Pool Table-Pets
-                </h1>
+                <h1 className="main-h1">{detail.region}</h1>
               </span>
               <div className="main-between">
                 <div className="main-host">
@@ -31,7 +29,7 @@ export default function DetailBody() {
                         <path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z"></path>
                       </StarSvg>
                     </span>
-                    <span className="">5.0 · </span>
+                    <span className="">{detail.star} · </span>
                     <span className=""> 후기 7개 · </span>
                   </span>
 

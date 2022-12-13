@@ -1,13 +1,18 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 export default function MainLeft() {
+  const location = useLocation();
+
+  const detail = location.state.e;
+
   return (
     <>
       <div className="detail-user">
         <div className="detail-user-info">
           <div>
-            <h2 className="detail-h2">Kia And Rob 님이 호스팅하는 집 전체</h2>
+            <h2 className="detail-h2">{detail.region}</h2>
             <span className="detail-span">
               최대 인원 14명 · 침실 5개 · 침대 9개 · 욕실 3.5개
             </span>

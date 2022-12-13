@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import dummy from "../hook/data.json";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -63,7 +63,7 @@ export default function MainBody() {
                   <span className="main-detail-info">{e.date}</span>
                 </div>
                 <div className="main-price main-detail">
-                  <span>{e.money}</span>
+                  <span>₩{Number(e.money).toLocaleString()}원</span>
                 </div>
                 <span className="main-star" role="img">
                   <span className="main-star-svg">
@@ -77,7 +77,7 @@ export default function MainBody() {
                       <path d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z"></path>
                     </SvgTag>
                   </span>
-                  <span>5.0</span>
+                  <span>{e.star}</span>
                 </span>
               </div>
             </div>
