@@ -213,12 +213,12 @@ const NavBar = styled.div`
   z-index: 10;
 
   background-color: #ffffff;
-  height: 100%;
+  height: ${(props) => (props.value ? "100%" : "100px")};
 
   padding: 0 80px;
   border-bottom: 1px solid #dddddd;
 
-  transform: translateY(${(props) => (props.value ? "30x" : "80px")});
+  transform: translateY(${(props) => (props.value ? "0" : "70px")});
   transition: transform 250ms ease;
 `;
 
@@ -295,7 +295,7 @@ const SearchBoxBtn = styled.button`
 const SearchUl = styled.ul`
   visibility: ${(props) => (props.value ? "hidden" : "visible")};
 
-  margin-top: ${(props) => (props.value ? "0" : "20px")};
+  margin-top: ${(props) => (props.value ? "0" : "10px")};
   width: 370px;
 
   z-index: 1000;
