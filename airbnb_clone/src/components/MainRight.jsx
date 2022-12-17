@@ -1,6 +1,11 @@
 import React from "react";
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
+import { guestChildNum, guestNum } from "../recoil/airplane";
+
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 export default function MainRight() {
   const location = useLocation();
@@ -19,6 +24,38 @@ export default function MainRight() {
 
   const makeCash = (e) => {
     return Number(e).toLocaleString();
+  };
+
+  const [num, setNum] = useRecoilState(guestNum);
+
+  const onPlus = () => {
+    setNum(num + 1);
+  };
+
+  const onMinus = () => {
+    if (num > 1) {
+      return setNum(num - 1);
+    }
+    return;
+  };
+
+  const [childNum, setChildNum] = useRecoilState(guestChildNum);
+
+  const onChildPlus = () => {
+    setChildNum(childNum + 1);
+  };
+
+  const onChildMinus = () => {
+    if (childNum > 0) {
+      return setChildNum(childNum - 1);
+    }
+    return;
+  };
+
+  const [guest, setGuest] = useState(true);
+
+  const onGuest = () => {
+    setGuest(!guest);
   };
 
   return (
@@ -61,27 +98,47 @@ export default function MainRight() {
                     <div>2022. 12. 11.</div>
                   </div>
                 </div>
-                <div className="side-guest">
+                <SideGuest value={guest}>
                   <div>
                     <div>인원</div>
-                    <div>게스트 1명</div>
+                    <div>게스트 {num + childNum}명</div>
                   </div>
                   <div className="side-guest-cnt">
-                    <SideGuestCnt
-                      viewBox="0 0 32 32"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      role="presentation"
-                      focusable="false"
-                    >
-                      <g fill="none">
-                        <path d="m28 12-11.2928932 11.2928932c-.3905243.3905243-1.0236893.3905243-1.4142136 0l-11.2928932-11.2928932"></path>
-                      </g>
-                    </SideGuestCnt>
+                    <MdOutlineKeyboardArrowDown
+                      onClick={onGuest}
+                      className="rotate"
+                    />
                   </div>
-                </div>
+                </SideGuest>
               </div>
-
+              <GuestBox value={guest}>
+                <GuestLi>
+                  <div style={{ padding: "5px 0" }}>
+                    성인
+                    <div style={{ fontSize: "13px", paddingTop: "5px" }}>
+                      만 13세 이상
+                    </div>
+                  </div>
+                  <GusetNumber>
+                    <SumSpan onClick={onMinus}>-</SumSpan>
+                    <span>{num}</span>
+                    <SumSpan onClick={onPlus}>+</SumSpan>
+                  </GusetNumber>
+                </GuestLi>
+                <GuestLi>
+                  <div style={{ padding: "5px 0" }}>
+                    유아
+                    <div style={{ fontSize: "13px", paddingTop: "5px" }}>
+                      만 2세 이상 ~ 만 12세
+                    </div>
+                  </div>
+                  <GusetNumber>
+                    <SumSpan onClick={onChildMinus}>-</SumSpan>
+                    <span>{childNum}</span>
+                    <SumSpan onClick={onChildPlus}>+</SumSpan>
+                  </GusetNumber>
+                </GuestLi>
+              </GuestBox>
               <div
                 className="side-res"
                 onClick={() => {
@@ -177,14 +234,20 @@ const SideStar = styled.svg`
   fill: currentcolor;
 `;
 
-const SideGuestCnt = styled.svg`
-  display: block;
-  fill: none;
-  height: 16px;
-  width: 16px;
-  stroke: currentcolor;
-  stroke-width: 4;
-  overflow: visible;
+const SideGuest = styled.div`
+  padding: 26px 6px 10px 12px;
+
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+
+  .rotate {
+    font-size: 28px;
+    cursor: pointer;
+    transform: rotate(${(props) => (props.value ? "0" : "180deg")});
+    transition: all 0.3s;
+  }
 `;
 
 const MoneySvg = styled.svg`
@@ -200,4 +263,52 @@ const ReportSvg = styled.svg`
   height: 16px;
   width: 16px;
   fill: currentcolor;
+`;
+
+const GuestBox = styled.div`
+  position: absolute;
+
+  top: 210px;
+
+  width: 280px;
+  height: 200px;
+
+  border: 1px solid;
+
+  background-color: #ffffff;
+
+  padding: 20px;
+
+  visibility: ${(props) => (props.value ? "hidden" : "visible")};
+  transition: all 0.2s;
+`;
+
+const GusetNumber = styled.div`
+  padding: 10px;
+
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const SumSpan = styled.span`
+  font-size: 24px;
+
+  color: #2e2e2e;
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  padding: 4px 10px;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+`;
+
+const GuestLi = styled.li`
+  list-style: none;
+
+  display: flex;
+  justify-content: space-between;
 `;

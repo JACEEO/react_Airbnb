@@ -1,5 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { guestChildNum, guestNum } from "../recoil/airplane";
 
 export default function Reserv() {
   const location = useLocation();
@@ -19,6 +21,10 @@ export default function Reserv() {
   const makeCash = (e) => {
     return Number(e).toLocaleString();
   };
+
+  const num = useRecoilValue(guestNum);
+
+  const childNum = useRecoilValue(guestChildNum);
 
   return (
     <>
@@ -103,7 +109,7 @@ export default function Reserv() {
               <div className="info-div">
                 <div>
                   <h3>게스트</h3>
-                  <div>게스트 1명</div>
+                  <div>게스트 {num + childNum}명</div>
                 </div>
                 <div>수정</div>
               </div>

@@ -228,6 +228,7 @@
   border-radius: 12px;
   padding: 24px;
   box-shadow: rgb(0 0 0 / 12%) 0px 6px 16px;
+  position: relative;
 }
 
 .side-mny {
@@ -267,15 +268,6 @@
   flex: 1 1 0%;
   border-left: 1px solid;
   padding: 26px 12px 10px;
-}
-
-.side-guest {
-  padding: 26px 6px 10px 12px;
-
-  display: flex;
-  justify-content: space-between;
-
-  align-items: center;
 }
 
 .side-guest-cnt {

@@ -25,7 +25,6 @@ export default function Category() {
       return !prev;
     });
     navigate(`/`);
-    console.log(id);
   };
 
   // useEffect(() => {
@@ -108,6 +107,10 @@ const CategoryWrap = styled.div`
   z-index: 1;
 
   display: flex;
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
 `;
 
 const FilterWrap = styled.div`

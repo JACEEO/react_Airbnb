@@ -54,18 +54,9 @@
   width: 1px;
 }
 
-.profile {
-  width: 320px;
-  height: 80px;
-
-  display: flex;
-  justify-content: space-between;
-
-  align-items: center;
-}
 .profile_a {
   margin-right: 8px;
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
