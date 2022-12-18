@@ -9,3 +9,8 @@ export const guestChildNum = atom({
   key: "guestChildNum",
   default: 0,
 });
+
+export const onTrue = atom({
+  key: "onTrue",
+  default: true,
+});

@@ -54,22 +54,6 @@
   width: 1px;
 }
 
-.profile_a {
-  margin-right: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.profile_detail {
-  border: 1px solid #dddddd;
-  border-radius: 50px;
-  width: 77px;
-  height: 42px;
-  align-items: center;
-  justify-content: space-around;
-  display: flex;
-}
-
 /* 카테고리 부분 */
 
 .category-span {
@@ -135,15 +119,8 @@
 /* 하단 풋터 부분 */
 
 footer {
-  display: block;
-  position: fixed;
+  position: sticky;
   bottom: 0px;
-}
-
-.footer_wrap {
-  background-color: #ffffff;
-
-  border-top: 1px solid #dddddd;
 }
 
 .footer_box {

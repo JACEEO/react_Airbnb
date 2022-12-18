@@ -1,9 +1,14 @@
 import React from "react";
+import { useRecoilValue } from "recoil";
+import styled from "styled-components";
+import { onTrue } from "../recoil/airplane";
 
 export default function Footer() {
+  const on = useRecoilValue(onTrue);
+
   return (
     <footer>
-      <div className="footer_wrap">
+      <FooterWrap value={on}>
         <div className="footer_box">
           <div className="footer_map">
             <span className="">© 2022 Airbnb, Inc.</span>
@@ -46,7 +51,13 @@ export default function Footer() {
             책임은 해당 서비스를 제공하는 호스트에게 있습니다.
           </div>
         </div>
-      </div>
+      </FooterWrap>
     </footer>
   );
 }
+
+const FooterWrap = styled.div`
+  background-color: ${(props) => (props.value ? "#ffffff" : "#c7c6c6")};
+
+  border-top: 1px solid #dddddd;
+`;
