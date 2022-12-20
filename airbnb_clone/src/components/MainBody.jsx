@@ -14,12 +14,14 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Navigation, Pagination, Mousewheel } from "swiper";
-import { useState } from "react";
-import { useRecoilState } from "recoil";
-import { onTrue } from "../recoil/airplane";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { onTrue, heartArray, loginOn } from "../recoil/airplane";
+import Calendar from "./Calendar";
+import Login from "./Login";
 
 export default function MainBody() {
-  const [select, setSelect] = useState([]);
+  const login = useRecoilValue(loginOn);
+  const [heart, setHeart] = useRecoilState(heartArray);
 
   const [on, setOn] = useRecoilState(onTrue);
 
@@ -32,17 +34,18 @@ export default function MainBody() {
         setOn(true);
       }}
     >
-      <SearchVisibleBox value={on}></SearchVisibleBox>
+      <SearchVisibleBox value={on}>
+        <Calendar />
+      </SearchVisibleBox>
+
+      <LoginDiv value={login}>
+        <Login />
+      </LoginDiv>
       <MainBodyDiv value={on}>
         {dummy.source.map((e, index) => {
           return (
             <ImageWrap key={index}>
-              <div
-                onClick={() => {
-                  navigate(`/detail/${e.id}`, { state: { e } });
-                }}
-                style={{ cursor: "pointer" }}
-              >
+              <div>
                 <Swiper
                   navigation={true}
                   pagination={true}
@@ -50,6 +53,9 @@ export default function MainBody() {
                   modules={[Pagination, Navigation, Mousewheel]}
                   className="mySwiper"
                   style={{ width: "310px" }}
+                  onClick={() => {
+                    navigate(`/detail/${e.id}`, { state: { e } });
+                  }}
                 >
                   <SwiperSlide style={{ padding: "0", height: "295px" }}>
                     <MainImgBox alt={e.src} src={e.src} />
@@ -93,15 +99,15 @@ export default function MainBody() {
                 </div>
               </div>
 
-              <Heart>
+              <HeartDiv>
                 <HeartBtn
                   onClick={() => {
-                    !select.includes(e.id)
-                      ? setSelect((select) => [...select, e.id])
-                      : setSelect(select.filter((button) => button !== e.id));
+                    !heart.includes(e.id)
+                      ? setHeart((heart) => [...heart, e.id])
+                      : setHeart(heart.filter((button) => button !== e.id));
                   }}
                   style={{
-                    color: select.includes(e.id) ? "#ff385c" : "#dddddd",
+                    color: heart.includes(e.id) ? "#ff385c" : "#dddddd",
                   }}
                 >
                   <AiOutlineHeart
@@ -111,7 +117,7 @@ export default function MainBody() {
                     }}
                   />
                 </HeartBtn>
-              </Heart>
+              </HeartDiv>
             </ImageWrap>
           );
         })}
@@ -155,7 +161,7 @@ const ImageWrap = styled.div`
   cursor: pointer;
 `;
 
-const Heart = styled.div`
+const HeartDiv = styled.div`
   position: absolute;
   top: 15px;
   right: 10px;
@@ -176,5 +182,23 @@ const SearchVisibleBox = styled.div`
 
   background-color: #ffffff;
   z-index: 1000;
+  visibility: ${(props) => (props.value ? "hidden" : "visible")};
+`;
+
+const LoginDiv = styled.div`
+  width: 600px;
+  height: 600px;
+
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+
+  position: fixed;
+
+  top: 10%;
+  transform: translateX(70%);
+  background-color: #ffffff;
+
+  z-index: 9999;
+
   visibility: ${(props) => (props.value ? "hidden" : "visible")};
 `;

@@ -21,9 +21,8 @@ export const NavBar = styled.div`
   transition: transform 250ms ease;
 `;
 
-export const NavLink = styled.a`
+export const NavLink = styled.link`
   cursor: pointer;
-  color: #ff385c;
 
   @media screen and (max-width: 700px) {
     display: none;

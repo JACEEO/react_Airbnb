@@ -14,3 +14,13 @@ export const onTrue = atom({
   key: "onTrue",
   default: true,
 });
+
+export const heartArray = atom({
+  key: "heartArray",
+  default: [],
+});
+
+export const loginOn = atom({
+  key: "loginOn",
+  default: true,
+});

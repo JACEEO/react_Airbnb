@@ -13,32 +13,13 @@ import "swiper/css/navigation";
 import { Navigation, FreeMode, Mousewheel } from "swiper";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useEffect } from "react";
 
 export default function Category() {
   const navigate = useNavigate();
 
-  const [id, setId] = useState(true);
+  const [category, setCategory] = useState([]);
 
-  const pageNav = () => {
-    setId((prev) => {
-      return !prev;
-    });
-    navigate(`/`);
-  };
-
-  // useEffect(() => {
-  //   alert(`first render`);
-  //   if (!id) {
-  //     return () => {
-  //       alert(false);
-  //     };
-  //   }
-
-  //   return () => {
-  //     alert(`change render`);
-  //   };
-  // }, [id]);
+  console.log(category);
   return (
     <CategoryWrap>
       <CategoryBox>
@@ -60,7 +41,13 @@ export default function Category() {
                   role="radio"
                   aria-checked="true"
                   type="button"
-                  onClick={pageNav}
+                  onClick={() => {
+                    !category.includes(app.id)
+                      ? setCategory((category) => [...category, app.id])
+                      : setCategory(
+                          category.filter((button) => button !== app.id)
+                        );
+                  }}
                 >
                   <div className="category-btn-div">
                     <span className="category-span">
