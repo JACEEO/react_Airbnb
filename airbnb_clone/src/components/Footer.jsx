@@ -60,4 +60,8 @@ const FooterWrap = styled.div`
   background-color: ${(props) => (props.value ? "#ffffff" : "#c7c6c6")};
 
   border-top: 1px solid #dddddd;
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
 `;

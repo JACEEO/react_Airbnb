@@ -21,12 +21,15 @@ export const NavBar = styled.div`
   transition: transform 250ms ease;
 `;
 
-export const NavLink = styled.link`
-  cursor: pointer;
-
+export const NavLeft = styled.div`
+  width: 33%;
   @media screen and (max-width: 700px) {
     display: none;
   }
+`;
+
+export const NavLink = styled.link`
+  cursor: pointer;
 `;
 
 export const SearchWrap = styled.div`

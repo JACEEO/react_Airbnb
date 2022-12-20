@@ -5,6 +5,7 @@ import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import {
   NavBar,
+  NavLeft,
   NavSearch,
   Profile,
   ProfileA,
@@ -57,7 +58,7 @@ export default function Nav() {
 
   return (
     <NavBar value={on}>
-      <div style={{ width: "460px" }}>
+      <NavLeft>
         <NavLink to="/">
           <svg
             style={{
@@ -77,7 +78,7 @@ export default function Nav() {
             ></path>
           </svg>
         </NavLink>
-      </div>
+      </NavLeft>
 
       <SearchWrap>
         <NavSearch value={on} onClick={SearchBtn}>
